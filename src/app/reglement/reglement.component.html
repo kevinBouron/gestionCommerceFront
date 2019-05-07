@@ -1,0 +1,145 @@
+
+
+<div>
+<a>Accueil</a>
+<span>|</span>
+<a>Facture</a>
+<span>|</span>
+<a>Liste des factures</a>
+<span>|</span>
+<a>Règlement</a>
+
+</div>
+
+
+<div class="panel panel-primary">
+      <div class="panel-heading" id="essai" style="text-align:center">
+         <div class="border border-dark p-3" >
+         <h4>Détails de la facture</h4> 
+      </div>
+      </div>
+      <div class="border border-dark p-3">
+
+<form class="form-inline">
+   
+   <div class="row">
+
+   <div class="form-group mx-sm-3 mb-2">
+      <div class="col-sm-5">N° facture : </div>
+     <label for="numeroFacture" class="sr-only"></label>
+     <input type="text" class="form-control col-sm-6" id="numeroFacture">
+   </div>
+
+   <div class="form-group mx-sm-3 mb-2">
+         <div class="col-sm-5 class">Code client : </div>
+        <label for="codeClient" class="sr-only"></label>
+        <input type="text" class="form-control col-sm-6 class" id="codeClient">
+      </div>
+   <div class="form-group mx-sm-3 mb-2">
+         <div class="col-sm-5">Date : </div>
+           <label for="date" class="sr-only"></label>
+           <input type="date" class="form-control col-sm-7" id="date">
+         </div>
+      </div>
+
+      <div class="row">
+
+            <div class="form-group mx-sm-3 mb-2">
+               <div class="col-sm-5">TVA : </div>                  
+                 <label for="tva" class="sr-only"></label>
+                 <input type="text" class="form-control col-sm-6" id="tva">
+               </div>
+            
+               <div class="form-group mx-sm-3 mb-2">
+                  <div class="col-sm-5">Total : </div>  
+                    <label for="total" class="sr-only"></label>
+                    <input type="text" class="form-control col-sm-6" id="total">
+                  </div>
+               <div class="form-group mx-sm-3 mb-2">
+                     <div class="col-sm-5">Reste : </div>  
+                       <label for="reste" class="sr-only"></label>
+                       <input type="text" class="form-control col-sm-6" id="reste">
+                     </div>
+                  </div>
+
+ 
+   
+ </form>
+      </div>
+</div>
+
+
+
+
+
+      <div class="container">
+         <h5>Progression du paiement :</h5>
+         <div class="progress">
+           <div class="progress-bar" role="progressbar" aria-valuenow="[reglement.progression]" aria-valuemin="0" aria-valuemax="100" style="width:[reglement.progression]%">
+             [reglement.progression]%
+           </div>
+
+
+
+
+         </div>
+       </div>
+
+
+
+
+      <div class="panel-heading" style="text-align:center">
+          <h3>Règlement</h3> 
+          <div class="border border-dark p-3">
+            <div style="text-align:center" class="form-group col-xs-3">Montant : <input type="text" class="form-control"/></div>
+            
+            <div class="form-group col-xs-3">
+               Montant :<input type="text" class="form-control" id="usr">
+             </div>
+            
+            <div style="text-align:center" class="col-xs-3">Date : <input type="date" class="col-xs-3"/></div>
+            
+            <div style="text-align:center">Numéro pièce : <input type="text" class="col-xs-3"/></div>
+         </div>
+         <button (click)='savePaiement()' class="btn btn-primary">Save</button>
+       </div>
+
+ 
+
+
+  <div class="panel panel-primary" style="text-align:center">
+   <div class="panel-heading">
+     <h3>Liste des paiements</h3>
+   </div>
+
+   <div class="panel-body">
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th>Montant</th>
+           <th>Date</th>
+           <th>Mode de paiement</th>
+           <th>Option</th>           
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor='let reglement of reglements'>
+           <td>{{reglement.montant}}</td>
+           <td>{{reglement.date}}</td>
+           <td>{{reglement.modePaiement}}</td>
+           <td>
+               <a class="clickable" (click)='detailPaiement(reglement.id)'><span class="glyphicon glyphicon-eye-open"></span></a>           
+               <a class="clickable" (click)='editPaiement(reglement.id)'><span class="glyphicon glyphicon-pencil"></span></a>      
+               <a class="clickable" (click)='deletePaiement(reglement.id)'><span class="glyphicon glyphicon-trash"></span></a>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+ 
+   </div>
+ 
+ </div>
+
+ <div style="text-align:center">   
+   <a class="clickable" (click)='telecharger(paiement.id)'><span class="glyphicon glyphicon-download-alt"></span></a>
+</div>
