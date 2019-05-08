@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class ListeClientsComponent implements OnInit {
   pageTitle:"Liste des clients"
   clients : IClient[]
+  
 
 
 
