@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
 })
 export class ReglementComponent implements OnInit {
 
+  width:any;
+
   reglements : Reglement[];
-  reglement : Reglement = {id:0,montant:0,date:null,modePaiement:"",numeroPiece:0}
+  reglement : Reglement = {id:0,montant:0,date:null,modePaiement:"",numPiece:0}
   router: any;
   constructor(private reglementService : ReglementService) { }
 
   ngOnInit() {
+    this.width=75;
     this.reglementService.getAllContacts().subscribe( data => this.reglements = data);
+    
   }
 
   deleteContact(id: number) : void {
@@ -29,6 +33,14 @@ export class ReglementComponent implements OnInit {
     this.reglementService.savePaiement(this.reglement).subscribe(
       data => this.router.navigate(['/reglement'])
     );
+  }
+
+  editPaiement(id: number) : void {
+    this.reglementService.getReglement(id).subscribe
+  }
+
+  detailReglement(id : number): void {
+    this.router.navigate(['/detail/',id]);
   }
 
 }

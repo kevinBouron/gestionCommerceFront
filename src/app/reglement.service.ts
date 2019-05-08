@@ -14,23 +14,28 @@ export class ReglementService {
   }
 
   getAllContacts() : Observable<Reglement[]> {
-    return this.http.get<Reglement[]>('http://localhost:8080/reglement').pipe(
+    return this.http.get<Reglement[]>('http://localhost:8080/Reglement/getall').pipe(
       catchError(this.handleError)
     );
   }
 
   deletePaiement(id: number): Observable<{}> {
-    return this.http.delete('http://localhost:8080/reglement/delete/'+id).pipe(
+    return this.http.delete('http://localhost:8080/Reglement/delete/'+id).pipe(
       catchError(this.handleError)
     );
   }
 
   savePaiement(reglement: Reglement): Observable<Reglement> {
-    return this.http.post<Reglement>('http://localhost:8080/reglement/save', reglement).pipe(
+    return this.http.post<Reglement>('http://localhost:8080/Reglement/save', reglement).pipe(
       catchError(this.handleError)
     );
   }
 
+  getReglement(id: number) : Observable<Reglement> {
+    return this.http.get<Reglement>('http://localhost:8080/reglement/'+id).pipe(
+      catchError(this.handleError)
+    );
+  }
 
 
 

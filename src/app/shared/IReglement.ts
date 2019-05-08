@@ -3,5 +3,5 @@ export interface Reglement{
     montant : number;
     date : Date;
     modePaiement : string;
-    numeroPiece : number;
+    numPiece : number;
 }
