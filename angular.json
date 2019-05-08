@@ -22,9 +22,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
+
               "node_modules/bootstrap/dist/css/bootstrap.css",
+
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
+
               "src/styles.css"
+              
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -56,6 +63,7 @@
             }
           }
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
