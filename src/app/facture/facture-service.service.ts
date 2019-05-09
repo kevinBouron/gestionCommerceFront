@@ -11,30 +11,30 @@ export class FactureServiceService {
     constructor(private http: HttpClient) { }
 
   getAllFactures() : Observable<IFacture[]> {
-    return this.http.get<IFacture[]>('http://localhost:8080/factures').pipe(
+    return this.http.get<IFacture[]>('http://127.0.0.1:8080/factures').pipe(
       catchError(this.handleError)
     );
   }
 
   getFacture(numero: number) : Observable<IFacture> {
-    return this.http.get<IFacture>('http://localhost:8080/facture/'+numero).pipe(
+    return this.http.get<IFacture>('http://127.0.0.1:8080/facture/'+numero).pipe(
       catchError(this.handleError)
     );
   }
 
   saveFacture(facture: IFacture): Observable<IFacture> {
-    return this.http.post<IFacture>('http://localhost:8080/facture/save', facture).pipe(
+    return this.http.post<IFacture>('http://127.0.0.1:8080/facture/save', facture).pipe(
       catchError(this.handleError)
     );
   }
 
   editFacture(numero: number, facture: IFacture): Observable<IFacture> {
-    return this.http.post<IFacture>('http://localhost:8080/facture/edit/'+numero, facture).pipe(
+    return this.http.post<IFacture>('http://127.0.0.1:8080/facture/edit/'+numero, facture).pipe(
       catchError(this.handleError)
     );
   }
   deleteFacture(numero: number): Observable<IFacture> {
-    return this.http.delete<IFacture>('http://localhost:8080/facture/delete/'+numero).pipe(
+    return this.http.delete<IFacture>('http://127.0.0.1:8080/facture/delete/'+numero).pipe(
       catchError(this.handleError)
     );
   }

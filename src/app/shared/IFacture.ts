@@ -13,7 +13,7 @@ export interface IFacture {
     dateLivraison : string;
     tauxR : number;
     remise : number;
-
+    progression : number;
     fraisdeport : number;
     tva : number;
     BaseHT: number;

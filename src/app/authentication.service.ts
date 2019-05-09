@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(user) {
-    return this.http.post("http://localhost:8080/account/disconnect" + '/login', user, { observe: 'response' })
+    return this.http.post("http://127.0.0.1:8080/account/disconnect" + '/login', user, { observe: 'response' })
   }
   saveToken(jwt) {
     localStorage.setItem('token', jwt);
@@ -33,19 +33,19 @@ export class AuthService {
   disconnect(){
     console.log('Receiving Data from the BackOffice');
     const headers = new HttpHeaders();
-    return this.http.get("http://localhost:8080/account/disconnect",{ headers: new HttpHeaders({ 'Authorization': localStorage.getItem('token') }) });
+    return this.http.get("http://127.0.0.1:8080/account/disconnect",{ headers: new HttpHeaders({ 'Authorization': localStorage.getItem('token') }) });
   }
  
   initResetPassword(login) {
     const headers = new HttpHeaders();
-    return this.http.get('http://localhost:8080/api/account/reset_password/init/' + login);
+    return this.http.get('http://127.0.0.1:8080/api/account/reset_password/init/' + login);
   }
   finishResetPassword(newUser) {
     const headers = new HttpHeaders();
-    return this.http.post('http://localhost:8080/api/account/reset_password/finish', newUser);
+    return this.http.post('http://127.0.0.1:8080/api/account/reset_password/finish', newUser);
   }
   getConnectedUser(){
-    return this.http.get<Array<User>>("http://localhost:8080/usersConnected",{ headers: new HttpHeaders({ 'Authorization': localStorage.getItem('token') }) });
+    return this.http.get<Array<User>>("http://127.0.0.1:8080/usersConnected",{ headers: new HttpHeaders({ 'Authorization': localStorage.getItem('token') }) });
   
   }
 

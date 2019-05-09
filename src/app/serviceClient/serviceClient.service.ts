@@ -12,23 +12,23 @@ export class ClientServiceService{
     }
 
     getAllClients() : Observable<IClient[]>{
-        return this.http.get<IClient[]>('http://localhost:8080/Client/getall').
+        return this.http.get<IClient[]>('http://127.0.0.1:8080/Client/getall').
         pipe(catchError(this.handleError));
     }
     
     
 
     getClient(codeClient:number) : Observable<IClient>{
-        return this.http.get<IClient>('http://localhost:8080/Client/get/'+codeClient).
+        return this.http.get<IClient>('http://127.0.0.1:8080/Client/get/'+codeClient).
         pipe(catchError(this.handleError));
     }
 
     saveClient(client : IClient) : Observable<IClient>{
-        return this.http.post<IClient>('http://localhost:8080/Client/save', client).pipe(catchError(this.handleError));
+        return this.http.post<IClient>('http://127.0.0.1:8080/Client/save', client).pipe(catchError(this.handleError));
  }
     
     deleteClient(codeClient:number) : Observable<{}>{
-        return this.http.delete('http://localhost:8080/Client/delete'+codeClient).pipe(catchError(this.handleError));
+        return this.http.delete('http://127.0.0.1:8080/Client/delete'+codeClient).pipe(catchError(this.handleError));
     }
     
    

@@ -5,8 +5,8 @@ import { IFacture } from '../shared/IFacture';
 
 @Component({
   selector: 'app-new-facture',
-  templateUrl: './new-facture.component.html',
-  styleUrls: ['./new-facture.component.css']
+  templateUrl: './facture-ajout.component.html',
+  
 })
 export class NewFactureComponent implements OnInit {
 

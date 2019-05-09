@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReglementService } from '../reglement.service';
 import { Reglement } from '../shared/IReglement';
 import { Router } from '@angular/router';
-import { Facture } from '../shared/IFacture';
+import { IFacture } from '../shared/IFacture';
+import { FactureServiceService } from '../facture/facture-service.service';
 
 @Component({
   selector: 'app-reglement',
@@ -16,10 +17,10 @@ export class ReglementComponent implements OnInit {
   reglement : Reglement = {id:0,montant:0,date:null,modePaiement:"",numPiece:0}
   router: any;
 
-  facture: Facture;
+  facture: IFacture;
 
   constructor(private reglementService : ReglementService,
-    private factureService : FactureService) { }
+    private factureService : FactureServiceService) { }
 
  
 
@@ -40,11 +41,7 @@ export class ReglementComponent implements OnInit {
     );
   }
 
-  getFacture(id : number) {
-    this.reglementService.getFacture(id).subscribe(
-        data => this.reglement = data
-    );
-  }
+ 
 
     getReglement(id : number): void {
       this.router.navigate(['/detailReglement/',id]);

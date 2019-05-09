@@ -1,1 +1,11 @@
-@import '~bootstrap/dist/css/bootstrap.min.css'
+
+#div1{
+    width: 30%;
+    float: left;
+}
+
+img{
+ 
+    max-width: 100%;
+    height: auto;
+}

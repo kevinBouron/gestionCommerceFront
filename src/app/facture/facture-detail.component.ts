@@ -5,8 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-detail',
-  templateUrl: './contact-detail.component.html',
-  styleUrls: ['./contact-detail.component.css']
+  templateUrl: './facture-detail.component.html',
+ 
 })
 export class ContactDetailComponent implements OnInit {
 

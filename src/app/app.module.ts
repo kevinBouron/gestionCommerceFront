@@ -20,6 +20,13 @@ import { ReglementService } from './reglement.service';
 import { DetailReglementComponent } from './detail-reglement/detail-reglement.component';
 
 import { MenuListComponent } from './menu-list/menu-list.component';
+import { DetailOrdreCoupeComponent } from './detail-ordre-coupe/detail-ordre-coupe.component';
+import { OrdreCoupeServiceService } from './ordre-coupe-service.service';
+import { ProduitServiceService } from './produit-service.service';
+import { FactureServiceService } from './facture/facture-service.service';
+import { NewFactureComponent } from './facture/facture-ajout.component';
+import { ContactDetailComponent } from './facture/facture-detail.component';
+import { FactureListComponent } from './facture/facture-list.component';
 
 
 
@@ -35,9 +42,14 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     Mdpoublie,
     NewOrdreCoupeComponent,
     ListeOrdreCoupeComponent,
+    DetailOrdreCoupeComponent,
     MenuListComponent,
     ReglementComponent,
-    DetailReglementComponent
+    DetailReglementComponent,
+    NewFactureComponent,
+    ContactDetailComponent,
+    FactureListComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +58,11 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     FormsModule
   ],
   providers: [ ReglementService, 
-          ClientServiceService,
-             ReglementService],
+              ClientServiceService,
+             ReglementService,
+             OrdreCoupeServiceService, 
+             ProduitServiceService,
+            FactureServiceService],
 
   bootstrap : [AppComponent],
 

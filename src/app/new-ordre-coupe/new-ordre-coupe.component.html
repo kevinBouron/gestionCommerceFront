@@ -1,15 +1,45 @@
-<div class="panel panel-primary; width:50%">
-  <div class="panel-heading" style="width: 50%; margin-left: 25%">
+
+
+<div id="div2">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Gestion des commandes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nouvelle commande<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Liste des commandes</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
       <p><b>VANINA</b><br>
-      Coupe à façon<br>
-      25 rue Saint Appoline<br>
-      75002 Paris</p>
+        Coupe à façon<br>
+        25 rue Saint Appoline<br>
+        75002 Paris</p>
       <h1 class="panel-title" style="text-align: center">Ordre de coupe</h1>
-  </div>
-  <div class="panel-body">
-    <form style="width: 50%; margin-left: 25%">
-      <div class="form-row">          
-        <div class="form-group col-md-6">
+    </div>
+    <div class="panel-body">
+      <!-- <form>
+       <div class="form-row">
+          <div class="form-group col-md-6">
           <label for="fabricant">Fabricant:</label>
           <input type="text" [(ngModel)]='produit.fabricant' class="form-control" name="fabricant">
         </div>
@@ -41,7 +71,7 @@
         <button type="submit" class="btn btn-primary" (click)='onclick()'>Ajouter</button>
       </form><br>
 
-         <table class="table" style="width: 50%; margin-left: 25%">
+         <table class="table" >
         <thead>
           <tr>
             <th>Code Produit</th>
@@ -64,76 +94,76 @@
                 <td>{{produit.quantite}}</td>
             </tr>
         </tbody>
-      </table>
+      </table>-->
 
-    <form style="width: 50%; margin-left: 25%">
-      <div class="form-group">   
-        <div class="row">
-          <div class="col-md-4">Coupe en bout:
-              <input type="checkbox" checked data-toggle="toggle">
-          </div>
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">Coupe en bout:
+                  <input type="checkbox" [(ngModel)]='commande.coupeEnBout' checked data-toggle="toggle" name="coupe">
+                </div>
 
-          <div class="col-md-4">Thermo:
-              <input type="checkbox" checked data-toggle="toggle">
-          </div>
-          <div class="col-md-4">EMP/DBL:
-              <input type="checkbox" checked data-toggle="toggle">
-          </div><br>
-      </div>
-      <div class="row">
-          <div class="form-group col-md-4">
-              <label for="tissus">Laize tissus:</label>
-              <input type="text" class="form-control" name="tissus">
-          </div>
-          <div class="form-group col-md-4">
-              <label for="EMP/DBL">EMP/DBL:</label>
-              <input type="text" class="form-control" name="EMP/DBL">
-          </div>
-          <div class="form-group col-md-4">
-              <label for="Thermo">Thermo:</label>
-              <input type="text" class="form-control" name="Thermo">
-          </div>
+                <div class="col-md-4">Thermo:
+                  <input type="checkbox" [(ngModel)]='commande.Thermo' checked data-toggle="toggle" name="thermo">
+                </div>
+                <div class="col-md-4">EMP/DBL:
+                  <input type="checkbox" [(ngModel)]='commande.empDbl' checked data-toggle="toggle" name="empdbl">
+                </div><br>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label for="tissus">Laize tissus:</label>
+                  <input type="text" class="form-control" name="tissus">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="EMP/DBL">EMP/DBL:</label>
+                  <input type="text" class="form-control" name="EMP/DBL">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="thermoType">Thermo:</label>
+                  <input type="text" [(ngModel)]='commande.thermoType' class="form-control" name="thermoType">
+                </div>
 
-      </div>
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label for="Façonnier">Façonnier:</label>
-                <input type="text" class="form-control" name="Façonnier">
+              </div>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label for="Façonnier">Façonnier:</label>
+                  <input type="text" [(ngModel)]='commande.faconnier' class="form-control" name="Façonnier">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="Societe">société:</label>
+                  <input type="text" [(ngModel)]='commande.societe' class="form-control" name="Societe">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="Receptionneur">Réceptionneur:</label>
+                  <input type="text" [(ngModel)]='commande.receptionneur' class="form-control" name="Receptionneur">
+                </div>
+              </div>
+
+              <div style="width:50% ;float: left">
+                <label for="prix">PH/HT par pièce:</label>
+                <textarea class="form-control" id="prix"></textarea>
+              </div>
+              <div style="width:50% ;float: left">
+                <label for="forfait">Forfait coupe:</label>
+                <textarea class="form-control" id="forfait"></textarea><br>
+              </div>
+              <div style="width:50%;float: right">
+                <label for="cachet">Cachet client:</label>
+                <textarea class="form-control" id="cachet"></textarea>
+              </div>
+              <div style="width:50%">
+                <label for="observation">Observations:</label>
+                <textarea class="form-control" id="observation"></textarea>
+              </div>
             </div>
-            <div class="form-group col-md-4">
-                <label for="Façonnier">Façonnier:</label>
-                <input type="text" class="form-control" name="Façonnier">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="Façonnier">Façonnier:</label>
-                <input type="text" class="form-control" name="Façonnier">
-            </div>              
+          </form><br>
+
+          <div class="row" style="float: right">
+            <button type="submit" class="btn btn-primary" (click)='saveCommande()'>Envoyer</button>
+            <button type="submit" class="btn btn-primary" (click)='annulerCommande()'>Annuler</button>
+          </div>
         </div>
-             
-          <div style="width:50% ;float: left">
-              <label for="prix">PH/HT par pièce:</label>
-              <textarea class="form-control" id="prix"></textarea>
-          </div>
-          <div style="width:50% ;float: left">
-              <label for="forfait">Forfait coupe:</label>
-              <textarea class="form-control" id="forfait"></textarea><br>
-          </div>          
-          <div style="width:50%;float: right">
-              <label for="cachet">Cachet client:</label>
-              <textarea class="form-control" id="cachet"></textarea>
-          </div>  
-          <div style="width:50%">
-              <label for="observation">Observations:</label>
-              <textarea class="form-control" id="observation"></textarea>
-          </div>          
-        </div>   
-      </form><br> 
+    </div>
 
-      <div class="row" style="margin-right: 25%;float: right">
-          <button type="submit" class="btn btn-primary" (click)='saveContact()'>Envoyer</button>
-          <button type="submit" class="btn btn-primary">Annuler</button>
-      </div>
-    </div>    
   </div>
-
-

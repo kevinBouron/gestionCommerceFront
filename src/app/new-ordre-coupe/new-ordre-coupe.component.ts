@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from '../shared/IProduit';
+import { Commande } from '../shared/ICommande';
 import {OrdreCoupeServiceService} from '../ordre-coupe-service.service';
+import {ProduitServiceService} from '../produit-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-ordre-coupe',
@@ -9,19 +12,26 @@ import {OrdreCoupeServiceService} from '../ordre-coupe-service.service';
 })
 export class NewOrdreCoupeComponent implements OnInit {
 
-  contact : Produit = {code:0,fabricant:"",taille:"",couleur:"",modele:"",prix:null,quantite:null}
+  contact : Produit = {code:0,fabricant:"",taille:"",couleur:"",modele:"",prix:null,quantite:null};
+  commande : Commande = {id:0,date:null,coupeEnBout:null,thermo:null,empDbl:null,thermoType:"",faconnier:"",societe:"",receptionneur:"",produits:null}
 
-  constructor() { }
+  constructor(private OrdreCoupeServiceService:OrdreCoupeServiceService,  private router: Router) { }
 
   ngOnInit() {
   }
 
-  onclick(){
+  onclick() : void {
+  
   }
 
-  saveContact() : void {
-    this.ordreCoupe.saveContact(this.contact).subscribe(
+  saveCommande() : void {
+    this.OrdreCoupeServiceService.saveCommande(this.commande).subscribe(
       data => this.router.navigate(['/commandes'])
     );
   }
+
+  annulerCommande(): void {
+    this.router.navigate(['/accueil']);
+  }
+
 }
