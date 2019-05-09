@@ -1,0 +1,92 @@
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+  </head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0259/0359/files/vanina.jpg?v=1476452326.jpg&fbclid=IwAR3EkAj9c6VTa1bnZlDQX5yRYhLrlXH_UJAfaC-e5bMAGJ6L-ONhk7p7P1M" style="width:20%"/>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" style="margin-left: 20%"   id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['clients']">Liste de clients </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['nouveauContact']">Ajouter un client </a>
+          </li>
+      </ul>
+      <ul class="nav-item">
+          <a class="nav-link" href="#"> <i class="fas fa-bell"></i> </a>
+      </ul>
+        <ul class="nav-item">
+            <a class="nav-link" href="#"> <i class="fas fa-user-circle"></i></a>
+        </ul>
+    </div>
+  </nav>
+
+ <app-menu-list></app-menu-list>
+
+  <table class="Info" align="center" >
+    
+    <tbody>
+        <tr> <b> <h2>Informations générales </h2></b></tr>
+        <tr>
+            <td > <label for="nomClient">Nom:</label>
+              <input type="text" [(ngModel)]='client.nomClient' class="form-control" name="nomClient" /> 
+            </td>
+            <td > <label for="prenomClient">Prénom :</label>
+              <input type="text" [(ngModel)]='client.prenomClient' class="form-control" name="prenomClient" /> 
+            </td>
+            <td > <label for="dateNaissance">Date de naissance :</label>
+              <input type="date" [(ngModel)]='client.dateNaissance' class="form-control" name="dateNaissance" /> 
+            </td>
+        </tr>
+        <tr>
+            <td > <label for="adresse"> Adresse :</label>
+              <input type="text" [(ngModel)]='client.adresse' class="form-control" name="adresse" /> 
+            </td>
+            <td > <label for="societe"> Société :</label>
+              <input type="text" [(ngModel)]='client.societe' class="form-control" name="societe" /> 
+            </td>
+            <td> </td>
+        </tr>
+        <tr><b> <h2> Contacts </h2></b></tr>
+        <tr>
+            <td > <label for="telMobile">Téléphone mobile :</label>
+              <input type="text" [(ngModel)]='client.telMobile' class="form-control" name="telMobile" /> 
+            </td>
+            <td > <label for="fax">FAX :</label>
+              <input type="text" [(ngModel)]='client.fax' class="form-control" name="fax" /> 
+            </td>
+        </tr>
+        <tr>
+            <td > <label for="telFixe">Téléphone fixe :</label>
+              <input type="text" [(ngModel)]='client.telFixe' class="form-control" name="telFixe" /> 
+            </td>
+            <td > <label for="email">E-mail :</label>
+              <input type="text" [(ngModel)]='client.email' class="form-control" name="email" /> 
+            </td>
+          </tr>
+
+    </tbody>
+  </table>
+
+  <div align = "right">
+    <button (click)="saveClient()" class="btn btn-primary"> Ajouter </button> <button class="btn btn-primary"> Annuler </button>
+  </div>
+
+
+
+

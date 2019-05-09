@@ -1,0 +1,139 @@
+<div class="panel panel-primary; width:50%">
+  <div class="panel-heading" style="width: 50%; margin-left: 25%">
+      <p><b>VANINA</b><br>
+      Coupe à façon<br>
+      25 rue Saint Appoline<br>
+      75002 Paris</p>
+      <h1 class="panel-title" style="text-align: center">Ordre de coupe</h1>
+  </div>
+  <div class="panel-body">
+    <form style="width: 50%; margin-left: 25%">
+      <div class="form-row">          
+        <div class="form-group col-md-6">
+          <label for="fabricant">Fabricant:</label>
+          <input type="text" [(ngModel)]='produit.fabricant' class="form-control" name="fabricant">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="taille">Taille:</label>
+          <input type="text" [(ngModel)]='produit.taille' class="form-control" name="taille">
+        </div>
+      </div>
+        <div class="form-row">          
+          <div class="form-group col-md-6">
+            <label for="couleur">Couleur:</label>
+            <input type="text" [(ngModel)]='produit.couleur' class="form-control" name="couleur">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="modele">Modèle:</label>
+              <input type="text" [(ngModel)]='produit.modele' class="form-control" name="modele">
+            </div>
+        </div>
+        <div class="form-row">          
+          <div class="form-group col-md-6">
+            <label for="prix">Prix:</label>
+            <input type="text" [(ngModel)]='produit.prix' class="form-control" name="prix">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="quantite">Quantité:</label>
+            <input type="text" [(ngModel)]='produit.quantite' class="form-control" name="quantite">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)='onclick()'>Ajouter</button>
+      </form><br>
+
+         <table class="table" style="width: 50%; margin-left: 25%">
+        <thead>
+          <tr>
+            <th>Code Produit</th>
+            <th>Fabricant</th>
+            <th>Taille</th>
+            <th>Couleur</th>
+            <th>Modèle</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+          </tr>
+        </thead>
+        <tbody>           
+            <tr>
+                <td>{{produit.code}}</td>
+                <td>{{produit.fabricant}}</td>
+                <td>{{produit.taille}}</td>
+                <td>{{produit.couleur}}</td>
+                <td>{{produit.modele}}</td>
+                <td>{{produit.prix}}</td>
+                <td>{{produit.quantite}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+    <form style="width: 50%; margin-left: 25%">
+      <div class="form-group">   
+        <div class="row">
+          <div class="col-md-4">Coupe en bout:
+              <input type="checkbox" checked data-toggle="toggle">
+          </div>
+
+          <div class="col-md-4">Thermo:
+              <input type="checkbox" checked data-toggle="toggle">
+          </div>
+          <div class="col-md-4">EMP/DBL:
+              <input type="checkbox" checked data-toggle="toggle">
+          </div><br>
+      </div>
+      <div class="row">
+          <div class="form-group col-md-4">
+              <label for="tissus">Laize tissus:</label>
+              <input type="text" class="form-control" name="tissus">
+          </div>
+          <div class="form-group col-md-4">
+              <label for="EMP/DBL">EMP/DBL:</label>
+              <input type="text" class="form-control" name="EMP/DBL">
+          </div>
+          <div class="form-group col-md-4">
+              <label for="Thermo">Thermo:</label>
+              <input type="text" class="form-control" name="Thermo">
+          </div>
+
+      </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="Façonnier">Façonnier:</label>
+                <input type="text" class="form-control" name="Façonnier">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Façonnier">Façonnier:</label>
+                <input type="text" class="form-control" name="Façonnier">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Façonnier">Façonnier:</label>
+                <input type="text" class="form-control" name="Façonnier">
+            </div>              
+        </div>
+             
+          <div style="width:50% ;float: left">
+              <label for="prix">PH/HT par pièce:</label>
+              <textarea class="form-control" id="prix"></textarea>
+          </div>
+          <div style="width:50% ;float: left">
+              <label for="forfait">Forfait coupe:</label>
+              <textarea class="form-control" id="forfait"></textarea><br>
+          </div>          
+          <div style="width:50%;float: right">
+              <label for="cachet">Cachet client:</label>
+              <textarea class="form-control" id="cachet"></textarea>
+          </div>  
+          <div style="width:50%">
+              <label for="observation">Observations:</label>
+              <textarea class="form-control" id="observation"></textarea>
+          </div>          
+        </div>   
+      </form><br> 
+
+      <div class="row" style="margin-right: 25%;float: right">
+          <button type="submit" class="btn btn-primary" (click)='saveContact()'>Envoyer</button>
+          <button type="submit" class="btn btn-primary">Annuler</button>
+      </div>
+    </div>    
+  </div>
+
+
