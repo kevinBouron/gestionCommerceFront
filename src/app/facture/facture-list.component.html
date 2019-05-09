@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <img src="https://cdn.shopify.com/s/files/1/0259/0359/files/vanina.jpg?v=1476452326.jpg&fbclid=IwAR3EkAj9c6VTa1bnZlDQX5yRYhLrlXH_UJAfaC-e5bMAGJ6L-ONhk7p7P1M" style="width:20%"/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" style="margin-left: 20%"   id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['nouveauClient']">Ajouter facture </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['clients']">Liste des factures </a>
+          </li>
+      </ul>
+      <ul class="nav-item">
+          <a class="nav-link" href="#"> <i class="fas fa-bell"></i> </a>
+      </ul>
+        <ul class="nav-item">
+            <a class="nav-link" href="#"> <i class="fas fa-user-circle"></i></a>
+        </ul>
+    </div>
+  </nav>
+
+
+
+<app-menu-list></app-menu-list>
+
+
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            {{pageTitle}}
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">Rechercher:</div>
+                <div class="col-md-4">
+                    <input type="text" [(ngModel)]='filter' />
+                </div>
+            </div>
+        </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <button class="btn btn-primary"></button>
+                            </th>
+                            <th>Numero</th>
+                            <th>CodeFacture</th>
+                            <th>CodeClient</th>
+                            <th>Date</th>
+                            <th>Société</th>
+                            <th>Montant</th>
+                            <th>Statut</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr *ngFor='let facture of filteredFactures'>
+                                    <td>{{facture.numero}}</td>
+                                    <td>{{facture.codeFacture}}</td>
+                                    <td>{{client.codeClient}}</td>
+                                    <td>{{facture.date}}</td>
+                                    <td>{{client.nomSociete}}</td>
+                                    <td>{{facture.montantTTC}}</td>
+                                    <td>{{facture.statut}}</td>
+                                    <td><a class="clickable" (click)='DetailFacture(facture.numero)'>Detail</a></td>
+                                    <td><a class="clickable" (click)='editFacture(facture.numero)'>Edit</a></td>
+                                    <td><a class="clickable" (click)='deleteFacture(facture.numero)'>Delete</a></td>
+                                    <td><a class="clickable" (click)='DLFacture(facture.numero)'>Download</a></td>
+                                    <td><a class="clickable" (click)='PayFacture(facture.numero)'>Pay</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </div>
+            
+</div>

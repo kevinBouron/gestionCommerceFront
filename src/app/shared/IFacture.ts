@@ -1,33 +1,28 @@
-export interface Facture{
+export interface IFacture {
+    numero : number;
+    codeFacture : string;
+    codeClient : string;
+
     numeroCommande : number;
-    dateCommande: Date;
-   
-    numTVA: number;
-	dateLivraison: Date;
-	tauxR: number;
-    remise: number;
-    fraisdeport: number;
+    dateCommande : string;
 
-    tva: number;
-	BaseHT: number;
+    modePaiement: string;
+    statut : string;
+
+    numTVA : number;
+    dateLivraison : string;
+    tauxR : number;
+    remise : number;
+
+    fraisdeport : number;
+    tva : number;
+    BaseHT: number;
     totalHT: number;
-    
-    montantTVA: number;
-	montantTTC: number;
-	accompte: number;
-	progression: number;
-	dateecheance: Date;
-	montantecheance: number;
-    restedu: number;
-    codeFacture: number;
+    montantTVA : number;
+    montantTTC : number;
+    accompte : number;
+    prixUnitaire : number;
+    dateecheance : string;
+    montantecheance : number;
+    restedu : number;
 }
-
-
-	
-	
-	
-	
-	
-	
-	
-	
