@@ -1,0 +1,54 @@
+#div1{
+    width: 20%;
+    float: left;
+}
+
+#div2{
+    width: 80%;
+    float: right;
+}
+
+img{
+ 
+    max-width: 100%;
+    height: auto;
+}
+
+h4{
+    border: 1px solid black;
+    border-radius: 30% /50%;
+    margin: 2%;
+    padding:1%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.bordure{
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.bordure2{
+    border: 2px solid rgb(17, 226, 191);
+    border-radius: 30px;
+}
+
+.panel-body{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%
+}
+
+.col{
+    text-align: center;
+    
+}
+.row{
+    margin-top: 5%;
+    margin-bottom: 5%
+}

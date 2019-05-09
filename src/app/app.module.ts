@@ -16,14 +16,17 @@ import { Mdpoublie } from './mdpOublie';
 import { AppComponent } from './app.component';
 import { ReglementComponent } from './reglement/reglement.component';
 import { ReglementService } from './reglement.service';
+
+import { DetailReglementComponent } from './detail-reglement/detail-reglement.component';
+
 import { MenuListComponent } from './menu-list/menu-list.component';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     ListeClientsComponent,
     DetailClientComponent,
     AjouterClientComponent,
@@ -32,7 +35,9 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     Mdpoublie,
     NewOrdreCoupeComponent,
     ListeOrdreCoupeComponent,
-    MenuListComponent
+    MenuListComponent,
+    ReglementComponent,
+    DetailReglementComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +46,10 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     FormsModule
   ],
   providers: [ ReglementService, 
-          ClientServiceService ],
+          ClientServiceService,
+             ReglementService],
 
   bootstrap : [AppComponent],
+
 })
 export class AppModule { }
